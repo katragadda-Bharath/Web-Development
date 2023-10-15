@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            background-color: #f4f4f4;
+            background-image: url('eee.avif');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }        
+        #links-container {
+            position: fixed;
+            top: 100px; /* Distance from the top of the viewport */
+            left: 40px; /* Distance from the left of the viewport */
+            width: 600px; /* Adjust the width as needed */
+            height: 500px; /* Adjust the height as needed */
+            overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;         
+        }
+        #links-container::-webkit-scrollbar {
+            width: 0.0em; /* Width of the scrollbar */
+        }
+        .link-box {
+            width: calc(33.33% - 20px); /* 33.33% to display three boxes in a row, subtracting padding and border */
+            padding: 40px;
+            margin: 10px; /* Adjust the margin as needed */
+            text-align: center;
+            border: 1px solid #FFB100;
+            background-color: #98A1E2;
+            float: left; /* Float the boxes left to display them in a row */
+        }
+        h1
+        {
+            text-align: center;
+            color: white;
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #191935;
+            font-weight: bold;
+            font-size: 16px;
+            }
+        .link-box:hover {
+            background-color: #9ed7fd;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<script>
+    function sendLink(linkId) 
+    {
+        localStorage.setItem('myValue',linkId);
+        window.location.href = "ListofLecturers.html";
+    }
+</script>
+<body>
+    <h1>Select A Course</h1>
+    <div id="links-container">
+        <div class="link-box">
+            <a href="#" onclick="sendLink('C')">Control Systems</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Python')">Electric Power Systems</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Java')">Digital Electronics</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Cpp')">Analogue Electronics</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Computer Network')">Signal Processing</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Web Development')">ElectroMagnetism</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Software Engineering')">Engineering Mathematics</a>
+        </div>
+        <!-- Add more link boxes as needed -->
+    </div>
+    
+</body>
+</html>

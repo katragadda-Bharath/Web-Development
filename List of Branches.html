@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Engineering Branch</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            margin: 0;
+            padding: 0;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 15px;
+        }
+        #links-container {
+            flex: 1;
+            max-width: 50%;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .link-box {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            margin-bottom: 20px;
+            border: 2px dashed #de6e0b;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .link-box:hover {
+            background-color: #f2aa5c;
+            border-color: transparent;
+        }
+        .link-box img {
+            height: 50px;
+            width: 50px;
+            margin-right: 20px; /* Add margin between logo and text */
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #208fda;
+            font-weight: bold;
+            font-size: 32px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Department</h1>
+    <div class="container">
+        <img src="branches.png">
+        <div id="links-container">
+            <div class="link-box">
+                <img src="cse_logo.png">
+                <a href="cse.html" onclick="sendLink('CSE')">Computer Science And Engineering</a>
+            </div>
+            <div class="link-box">
+                <img src="it_logo.png">
+                <a href="it.html" onclick="sendLink('IT')">Information Technology</a>
+            </div>
+            <div class="link-box">
+                <img src="eee_logo.png">
+                <a href="eee.html" onclick="sendLink('EEE')">Electrical And Electronics Engineering</a>
+            </div>
+            <div class="link-box">
+                <img src="mech_logo.png">
+                <a href="mech.html" onclick="sendLink('MECH')">Mechanical Engineering</a>
+            </div>
+            <div class="link-box">
+                <img src="civil_logo.png">
+                <a href="civil.html" onclick="sendLink('Civil')">Civil Engineering</a>
+            </div>
+            <div class="link-box">
+                <img src="ece_logo.png">
+                <a href="ece.html" onclick="sendLink('ECE')">Electronical Communication And Engineering</a>
+            </div>
+            <!-- Add more branches as needed -->
+        </div>
+    </div>
+</body>
+</html>

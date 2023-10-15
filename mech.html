@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>  
+        body
+        {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start; /* Align items at the start of the cross axis (top) */
+        }
+        .image {
+            width: 300px; /* Set the width of your image */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Adjust margin as needed */
+        }     
+        #links-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px;
+            border: 2px dashed #9760b1; /* Dotted border with the specified color */
+        }
+        #links-container::-webkit-scrollbar {
+            width: 0.0em; /* Width of the scrollbar */
+        }
+        .link-box {
+            width: calc(33.33% - 20px); /* 33.33% to display three boxes in a row, subtracting padding and border */
+            padding: 20px;
+            margin: 10px; /* Adjust the margin as needed */
+            text-align: center;
+            background-color: #303a43;
+            float: left; /* Float the boxes left to display them in a row */
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #ffec5df7;
+            font-weight: bold;
+            font-size: 16px;
+            }
+        .link-box:hover {
+            background-color: #6b6c6e;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<script>
+    function sendLink(linkId) 
+    {
+        localStorage.setItem('myValue',linkId);
+        window.location.href = "ListofLecturers.html";
+    }
+</script>
+<body>
+    <h1 style="text-align: center;">Select A Course</h1>
+    <div class="container">
+        <div id="links-container">
+            <div class="link-box">
+                <a href="#" onclick="sendLink('C')">Thermodynamics</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Python')">Design Thinking</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Java')">Strength Of Materials</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Cpp')">Applied Mechanics</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Computer Network')">Solid Mechanics</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Web Development')">Fluid Mechanics</a>
+            </div>
+            <div class="link-box">
+                <a href="#" onclick="sendLink('Software Engineering')">Heat Transfer</a>
+            </div>
+            
+            <!-- Add more link boxes as needed -->
+        </div>
+        <img src="mech.avif" height="500px">
+    </div>    
+</body>
+</html>

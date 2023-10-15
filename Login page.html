@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("teacher.avif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            background-color: #c4c0c0;
+            padding: 10px 40px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        
+        .login-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .login-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "user" && password === "pass") {
+                window.location.href = "List of Branches.html";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form>
+            <input id="username" class="login-input" type="text" placeholder="Username" required>
+            <input id="password" class="login-input" type="password" placeholder="Password" required>
+            <button class="login-button" type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+</body>
+</html>

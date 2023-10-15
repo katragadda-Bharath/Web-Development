@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read Data from HTML Table using JavaScript</title>
+    <style>
+        table {
+    width: 100%;
+}
+
+.table-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.table-image:hover {
+    transform: scale(1.1);
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr {
+    border: 2px dashed #FF5733; /* Dashed border with color */
+}
+
+tr:nth-child(even) {
+    background-color: #9fb9ec;
+}
+
+tr:nth-child(odd) {
+    background-color: #a9dce9;
+}
+
+.image-column {
+    width: 100px;
+    background-color: #7abbd78f;
+    color: white;
+}
+
+.text-columns {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+    </style>
+</head>
+<body>
+    <table id="empTable" hidden>
+        <tr>
+            <th>Employee</th>
+            <th>Employee Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Room No</th>
+            <th>Deals with</th>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Alpha</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>Alpha@pvpsiiddhartha.ac.in</td>
+            <td>201</td>
+            <td>C, Computer Network, Cpp, Python, Java</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Bob</td>
+            <td>984624821</td>
+            <td>Vijayawada</td>
+            <td>Bob@pvpsiiddhartha.ac.in</td>
+            <td>202</td>
+            <td>C, Cpp, </td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Nolan</td>
+            <td>9812365321</td>
+            <td>Vijayawada</td>
+            <td>Nolan@pvpsiiddhartha.ac.in</td>
+            <td>203</td>
+            <td>Computer Network, Software Engineering, Cpp</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>David</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>David@pvpsiiddhartha.ac.in</td>
+            <td>203</td>
+            <td>Software Engineering</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Eric</td>
+            <td>7541264321</td>
+            <td>Vijayawada</td>
+            <td>Eric@pvpsiiddhartha.ac.in</td>
+            <td>207</td>
+            <td>Python, Cpp, C</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Varun</td>
+            <td>9486454321</td>
+            <td>Vijayawada</td>
+            <td>varun@pvpsiiddhartha.ac.in</td>
+            <td>205</td>
+            <td>Java, C, Cpp</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Mahendra</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>mahendra@pvpsiiddhartha.ac.in</td>
+            <td>204</td>
+            <td>Python, Cpp, C</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Killbill</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>killbill@pvpsiiddhartha.ac.in</td>
+            <td>207</td>
+            <td>Java, Cpp, C</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Henry</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>henry@pvpsiiddhartha.ac.in</td>
+            <td>205</td>
+            <td>Python</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Amuktha</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>amuktha@pvpsiiddhartha.ac.in</td>
+            <td>207</td>
+            <td>C, Cpp</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Bhuvana</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>bhuvana@pvpsiiddhartha.ac.in</td>
+            <td>208</td>
+            <td>Java</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Chandhu</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>Alpha@pvpsiiddhartha.ac.in</td>
+            <td>208</td>
+            <td>Python</td>
+        </tr>
+        <tr>
+            <td><img class="table-image" src="download.webp"></td>
+            <td>Druthi</td>
+            <td>987654321</td>
+            <td>Vijayawada</td>
+            <td>druthi@pvpsiiddhartha.ac.in</td>
+            <td>207</td>
+            <td>Web Development<td>
+        </tr>
+    </table>
+    <p id="info"></p>
+    <script>
+        document.getElementById('info').innerHTML = 'Lecturers' + '<br/>';
+        var myTab = document.getElementById('empTable');
+        var value = localStorage.getItem('myValue');
+
+        var infoHtml = '<table>';
+        for (i = 1; i < myTab.rows.length; i++) {
+            var objCells = myTab.rows.item(i).cells;
+            if ((objCells.item(6).innerHTML).match(value)) {
+                infoHtml += '<tr>';
+                infoHtml += '<td class="image-column">' + objCells.item(0).innerHTML + '</td>'; // Image column
+                infoHtml += '<td class="text-columns">' +'Name : '+ objCells.item(1).innerHTML + '</td>'; // Name
+                infoHtml += '<td class="text-columns">' + 'Contact   : '+objCells.item(2).innerHTML + '</td>'; // contact
+                infoHtml += '<td class="text-columns">' + 'Address   : '+objCells.item(3).innerHTML + '</td>'; // Address
+                infoHtml += '<td class="text-columns">' + 'E-mail    : '+objCells.item(4).innerHTML + '</td>'; // E-mail
+                infoHtml += '<td class="text-columns">' + 'Room-No   : '+objCells.item(5).innerHTML + '</td>'; // Room no
+                infoHtml += '</tr>';
+            }
+        }
+        infoHtml += '</table>';
+        document.getElementById('info').innerHTML = infoHtml;
+    </script>
+</body>
+</html>

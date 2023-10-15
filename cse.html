@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            background-color: #f4f4f4;
+            background-image: url('cse.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }        
+        #links-container {
+            position: fixed;
+            top: 180px; /* Distance from the top of the viewport */
+            left: 490px; /* Distance from the left of the viewport */
+            width: 600px; /* Adjust the width as needed */
+            height: 250px; /* Adjust the height as needed */
+            background-color: #007DFE;
+            overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;         
+        }
+        #links-container::-webkit-scrollbar {
+            width: 0.0em; /* Width of the scrollbar */
+        }
+        .link-box {
+            width: calc(33.33% - 20px); /* 33.33% to display three boxes in a row, subtracting padding and border */
+            padding: 20px;
+            margin: 10px; /* Adjust the margin as needed */
+            text-align: center;
+            border: 1px solid #f75700;
+            background-color: #f9f9f9;
+            float: left; /* Float the boxes left to display them in a row */
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #208fda;
+            font-weight: bold;
+            font-size: 16px;
+            }
+        .link-box:hover {
+            background-color: #9ed7fd;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<script>
+    function sendLink(linkId) 
+    {
+        localStorage.setItem('myValue',linkId);
+        window.location.href = "ListofLecturers.html";
+    }
+</script>
+<body>
+    <h1 style="text-align: center;">Select A Course</h1>
+    <div id="links-container">
+        <div class="link-box">
+            <a href="#" onclick="sendLink('C')">C</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Python')">Python</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Java')">Java</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Cpp')">C++</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Computer Network')">Computer Network</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Web Development')">Web Development</a>
+        </div>
+        <div class="link-box">
+            <a href="#" onclick="sendLink('Software Engineering')">Software Engineering</a>
+        </div>
+        <!-- Add more link boxes as needed -->
+    </div>
+    
+</body>
+</html>
